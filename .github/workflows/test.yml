@@ -2,8 +2,8 @@
 name: Learn CI/CD with GitHub Actions # workflow name
 on: [push] # runs this job on a commit push
 service: restaurant-landing-page
-test: script1
-test2: script2
+# test: script1
+# test2: script2
 myArray:
   - key1: value1
     keyrandom: valuerandom
@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo 'Hello World!'
-  print-hello-world2:
+  print-multiline-contents:
     runs-on: ubuntu-latest # uses latest ubuntu docker image
     steps:
-      - run: echo 'Hello World!'
+      - run: echo $multiline
   show-file-tree:
     runs-on: ubuntu-latest
     # since steps are an array so they run sequentially and not parallelly
