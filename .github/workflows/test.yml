@@ -2,13 +2,6 @@
 name: Learn CI/CD with GitHub Actions # workflow name
 on: [push] # runs this job on a commit push
 service: restaurant-landing-page
-# test: script1
-# test2: script2
-myArray:
-  - key1: value1
-    keyrandom: valuerandom
-  - key2: value2
-    keyrandom2: valuerandom2
 multiline: |
   this is a multiline value
   that can be used to write multiline values
