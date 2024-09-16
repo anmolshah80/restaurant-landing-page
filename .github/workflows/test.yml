@@ -1,0 +1,35 @@
+# this is an example test.yml file to learn about YAML and GitHub Actions
+myapp:
+  name: Learn CI/CD with GitHub Actions # workflow name
+  on: [push] # runs this job on a commit push
+  service: restaurant-landing-page
+  test: script1
+  test2: script2
+  myArray:
+    - key1: value1
+      keyrandom: valuerandom
+    - key2: value2
+      keyrandom2: valuerandom2
+  multiline: |
+    this is a multiline value
+    that can be used to write multiline values
+    without having to use escape (\n) characters
+  # since each job is an object so they parallelly and not sequentially
+  jobs:
+    print-hello-world:
+      # uses latest ubuntu docker image
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo 'Hello World!'
+    print-hello-world2:
+      runs-on: ubuntu-latest # uses latest ubuntu docker image
+      steps:
+        - run: echo 'Hello World!'
+    show-file-tree:
+      runs-on: ubuntu-latest
+      # since steps are an array so they run sequentially and not parallelly
+      steps:
+        # `actions/checkout@v4` action checks-out the repository under `$GITHUB_WORKSPACE`, so that the workflow can access it
+        - uses: actions/checkout@v4
+        # bash command to show the tree view of files in your react project
+        - run: tree
