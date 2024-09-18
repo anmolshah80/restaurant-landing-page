@@ -2,11 +2,6 @@
 name: Learn CI/CD with GitHub Actions # workflow name
 on: [push] # runs this job on a commit push
 
-multiline: |
-  this is a multiline value
-  that can be used to write multiline values
-  without having to use escape (\n) characters
-
 # since each job is an object so they parallelly and not sequentially
 jobs:
   print-hello-world:
@@ -15,10 +10,11 @@ jobs:
     steps:
       - run: echo 'Hello World!'
 
-  print-multiline-contents:
+  print-hello-world-again:
     runs-on: ubuntu-latest # uses latest ubuntu docker image
     steps:
-      - run: echo ${{ steps.multiline.outputs.value}}
+      - name: Print Hello World Again
+        run: echo 'Hello World Again!'
 
   show-file-tree:
     runs-on: ubuntu-latest
