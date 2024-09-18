@@ -28,4 +28,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=$VERCEL_ACCESS_TOKEN
+        run: vercel deploy --prod --token=$VERCEL_ACCESS_TOKEN
