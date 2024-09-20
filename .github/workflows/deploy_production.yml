@@ -23,26 +23,26 @@ jobs:
       - name: Build Project Attributes
         run: vercel build --prod --token=$VERCEL_ACCESS_TOKEN
       - name: Confirm the presence of dist folder
-        run: ls -la dist
+        run: tree
       - name: Upload the dist folder contents
         uses: actions/upload-artifact@v4
         with:
           name: build
           if-no-files-found: error
           path: dist
+          retention-days: 1
 
   deploy-app:
     needs: build-app
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Action
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Download the dist folder contents
         uses: actions/download-artifact@v4
         with:
           name: build
           path: dist
       - name: Confirm the contents of dist folder
-        run: ls -la
+        run: tree
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prod --token=$VERCEL_ACCESS_TOKEN
