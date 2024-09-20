@@ -1,6 +1,10 @@
 # this is an example test.yml file to learn about YAML and GitHub Actions
 name: Learn CI/CD with GitHub Actions # workflow name
-on: [push] # runs this job on a commit push
+# on: [push] # runs this job on a commit push
+on:
+  push:
+    branches:
+      - main
 
 # since each job is an object so they parallelly and not sequentially
 jobs:

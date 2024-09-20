@@ -4,17 +4,22 @@ import { images, data } from '@/constants';
 
 import '@/containers/Laurels/Laurels.css';
 
-const AwardCard = ({ award: { imgUrl, title, subtitle } }) => (
-  <div className="app__laurels_awards-card">
-    <img src={imgUrl} alt="title" />
-    <div className="app__laurels_awards-card_content">
-      <p className="p__cormorant" style={{ color: '#dcca87' }}>
-        {title}
-      </p>
-      <p className="p__cormorant">{subtitle}</p>
-    </div>
-  </div>
-);
+const AwardCards = ({ awards }) =>
+  awards.map((award, index) => {
+    const { imgUrl, title, subtitle } = award;
+
+    return (
+      <div className="app__laurels_awards-card" key={title + index}>
+        <img src={imgUrl} alt="title" />
+        <div className="app__laurels_awards-card_content">
+          <p className="p__cormorant" style={{ color: '#dcca87' }}>
+            {title}
+          </p>
+          <p className="p__cormorant">{subtitle}</p>
+        </div>
+      </div>
+    );
+  });
 
 const Laurels = () => {
   const { awards } = data;
@@ -26,9 +31,7 @@ const Laurels = () => {
         <h1 className="headtext__cormorant">Our Laurels</h1>
 
         <div className="app__laurels_awards">
-          {awards.map((award, index) => (
-            <AwardCard award={award} key={award.title + index} />
-          ))}
+          <AwardCards awards={awards} />
         </div>
       </div>
 
