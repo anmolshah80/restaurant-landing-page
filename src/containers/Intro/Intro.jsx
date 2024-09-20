@@ -6,6 +6,12 @@ import { meal } from '@/constants';
 
 import '@/containers/Intro/Intro.css';
 
+const RenderPauseOrPlayIcon = ({ playVideo }) => {
+  if (!playVideo) return <BsFillPlayFill color="#fff" fontSize={50} />;
+
+  return <BsPauseFill color="#fff" fontSize={50} />;
+};
+
 const Intro = () => {
   const [playVideo, setPlayVideo] = useState(false);
 
@@ -36,11 +42,7 @@ const Intro = () => {
           className="app__video-overlay_circle flex__center"
           onClick={handleVideo}
         >
-          {playVideo ? (
-            <BsPauseFill color="#fff" fontSize={50} />
-          ) : (
-            <BsFillPlayFill color="#fff" fontSize={50} />
-          )}
+          <RenderPauseOrPlayIcon playVideo={playVideo} />
         </div>
       </div>
     </div>
