@@ -8,6 +8,7 @@
 - Create an About Us and Our History sections
 - Create a Today's Special section to inform users about the meal that fits their palatte
 - Create the Chef section to let users know about the chef's beliefs
+- Create the Introduction and Laurels sections to showcase the fine dining video, and awards & recognition given to the restaurant respectively
 - Add responsiveness to each of these sections for desktop, tablet, and mobile devices
 - Create a `deploy_production.yml` workflow to build and deploy the changes to production in Vercel
 
