@@ -23,7 +23,8 @@ jobs:
       - name: Build Project Attributes
         run: vercel build --prod --token=$VERCEL_ACCESS_TOKEN
       - name: Confirm the presence of dist folder
-        run: tree
+        # skip displaying the node_modules folder entirely in tree view
+        run: tree -I 'node_modules'
       - name: Upload the dist folder contents
         uses: actions/upload-artifact@v4
         with:
