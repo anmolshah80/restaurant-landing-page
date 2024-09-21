@@ -21,7 +21,7 @@ const GALLERY_IMAGES = [
 const Gallery = () => {
   const scrollRef = useRef(null);
 
-  const scroll = (direction) => {
+  const handleClick = (direction) => {
     const { current } = scrollRef;
 
     if (direction === 'left') {
@@ -60,11 +60,11 @@ const Gallery = () => {
         <div className="app__gallery-images_arrows">
           <BsArrowLeftShort
             className="gallery__arrow-icon"
-            onClick={() => scroll('left')}
+            onClick={() => handleClick('left')}
           />
           <BsArrowRightShort
             className="gallery__arrow-icon"
-            onClick={() => scroll('right')}
+            onClick={() => handleClick('right')}
           />
         </div>
       </div>
