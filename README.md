@@ -10,6 +10,7 @@
 - Create the Chef section to let users know about the chef's beliefs
 - Create the Introduction and Laurels sections to showcase the fine dining video, and awards & recognition given to the restaurant respectively
 - Create the Gallery and Find Us sections to showcase the photos of meals and opening hours respectively
+- Create the Footer section to render an input bar and a button to subscribe to newsletters, contact information, social links, and working hours
 - Add responsiveness to each of these sections for desktop, tablet, and mobile devices
 - Create a `deploy_production.yml` workflow to build and deploy the changes to production in Vercel
 - Create a `deploy_preview.yml` workflow to build and deploy preview in Vercel
